@@ -1,0 +1,94 @@
+.searchBar {
+    height: fit-content;
+    align-items: center;
+    display: flex;
+    background-color: black;
+
+    &__container {
+        width: 100%;
+        margin: 0px 20px;
+        flex-direction: column;
+        display: flex;
+        margin: auto;   
+
+        &__title, &__search {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             padding: 5px 0px;
+        }
+
+        &__title {
+            h1 {
+                color: white;
+                margin-top: auto;
+            }
+
+            img {
+                height: 45px; 
+            }                                   
+        }
+
+        &__search {           
+            margin-bottom: 10px;
+ 
+            input {
+                width: 200px;
+                height: 30px;
+                background-color: #dcdcdc;
+                border: 1px solid #cccccc;
+                border-radius: 3px;
+                transition: 1s;     
+                font-size: 16px;           
+
+                &:focus {
+                    background-color: white;
+                    outline: none;
+                }
+            }
+
+            &_button {
+                margin-left: 5px;
+                height: 25px;
+                border-radius: 3px;
+                color: white;
+                background-color: #9c9c9cdb;
+                align-items: center;
+                display: flex;
+                padding: 5px;
+                transition: 1s;
+
+                &:hover {
+                    background-color: #cacaca;
+                    color: #484848;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .searchBar {
+        &__container {
+            flex-direction: row;
+            justify-content: space-between;
+
+            &__search, &__title {
+                margin: 0px 50px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .searchBar {
+        &__container {
+            max-width: 1200px;
+
+            &__search, &__title {
+                margin: 0px 50px;
+            }
+        }
+    }
+}
