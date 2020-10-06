@@ -1,14 +1,13 @@
 .resultCard {
-    border: 1px solid #8080805e;
     border-radius: 5px;
-    margin: 25px auto;
+    margin: 20px auto 0px auto;
     background-color: #80808012;
     display: grid;
-    grid-template-rows: 260px auto;
+    grid-template-rows: 200px auto;
 
     &__thumbnail {
         img {
-            height: 260px;
+            height: 200px;
             border-radius: 5px;
             transition: 0.5s;
             object-fit: cover;
