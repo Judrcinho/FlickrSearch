@@ -1,9 +1,14 @@
 .resultCard {
-    border-radius: 5px;
     margin: 20px auto 0px auto;
-    background-color: #80808012;
+    border-radius: 5px;
     display: grid;
     grid-template-rows: 200px auto;
+    transition: box-shadow 0.5s;
+    overflow: hidden;
+
+    &:hover {
+        box-shadow: 0 0 11px rgba(33,33,33,.8);
+    }
 
     &__thumbnail {
         img {
@@ -19,7 +24,7 @@
     &__thumbnail, &__footer, &__tags, &__background {
         grid-row: 1;
         grid-column: 1;
-        transition: opacity .2s linear;
+        transition: all .2s linear;
         color: white;
 
         &:hover,
@@ -27,6 +32,10 @@
         &:hover ~ .resultCard__tags,
         &:hover ~ .resultCard__background {
             opacity: 1;
+        }
+
+        &:hover ~ .resultCard__footer {
+            transform: translateY(0px);
         }
     }
 
@@ -38,14 +47,20 @@
         opacity: 0;
         pointer-events: none;
         text-align: left;
+        transform: translateY(40px);
     
         &_author {
             font-weight: bold;
+        }
+
+        &:hover {
+            transform: translateY(0px);
         }
     }
 
     &__background {
         opacity: 0;
+        border-radius: 5px;
         pointer-events: none;
         background-image: linear-gradient(transparent 65%,rgba(0,0,0,.35));
     }
