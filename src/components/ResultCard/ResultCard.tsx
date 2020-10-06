@@ -21,22 +21,25 @@ const ResultCard:React.FC<ResultsListProps> = (props) => {
                 >
                     <img src={props.result.imageUrl}></img>
                 </a>
-                <div className="resultCard__info">
-                    <div className="resultCard__info_author">by {props.result.author}</div>
-                    <div className="resultCard__info_date">{props.result.date}</div>
-                </div>
                 <div className="resultCard__tags">
-                        {props.result.tags.map((tag, index) => 
-                            <div 
-                                key={index} 
-                                className="resultCard__tags_tag"
-                                onClick={() => {
-                                    dispatch(props.fetchResults(tag));
-                                }}
-                            >
-                                {tag}
-                            </div>)
-                        }
+                        <div className="resultCard__tags__wrapper">
+                            {props.result.tags.map((tag, index) => 
+                                <div 
+                                    key={index} 
+                                    className="resultCard__tags__wrapper_tag"
+                                    onClick={() => {
+                                        dispatch(props.fetchResults(tag));
+                                    }}
+                                >
+                                    {tag}
+                                </div>)
+                            }
+                        </div>
+                </div>
+                <div className="resultCard__background" />
+                <div className="resultCard__footer">
+                    <div className="resultCard__footer_date">{props.result.date}</div>
+                    <div className="resultCard__footer_author">by {props.result.author}</div>
                 </div>
             </div>
 }

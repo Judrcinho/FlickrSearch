@@ -33,6 +33,7 @@
             margin-bottom: 10px;
  
             input {
+                font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
                 width: 200px;
                 height: 30px;
                 background-color: #dcdcdc;
@@ -52,15 +53,17 @@
                 height: 25px;
                 border-radius: 3px;
                 color: white;
-                background-color: #9c9c9cdb;
+                background-color: #128fdc;
                 align-items: center;
                 display: flex;
                 padding: 5px;
                 transition: 1s;
+                width: 75px;
+                font-size: 18px;
+                justify-content: center;
 
                 &:hover {
-                    background-color: #cacaca;
-                    color: #484848;
+                    background-color: #5aafe4;
                     cursor: pointer;
                 }
             }
@@ -81,13 +84,13 @@
     }
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 950px) {
     .searchBar {
         &__container {
-            max-width: 1200px;
-
+            max-width: 1000px;
+        
             &__search, &__title {
-                margin: 0px 50px;
+                margin: 15px;
             }
         }
     }
