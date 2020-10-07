@@ -12,7 +12,7 @@ type ISearchBarProps = {
 
 const SearchBar: React.FC<ISearchBarProps> = ({fetchResults}) => {
     const dispatch: Dispatch<any> = useDispatch();
-    const [searchTerms, updateSearchTerms] = React.useState<string>("ocean sunset");
+    const [searchTerms, updateSearchTerms] = React.useState<string>("golden retriever");
 
     const getImages = () => dispatch(fetchResults(searchTerms));
     

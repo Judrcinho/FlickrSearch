@@ -1,10 +1,11 @@
 @import '../../common/variables.scss';
 
 .resultCard {
-    margin: 20px auto 0px auto;
+    margin: 15px;
     border-radius: 5px;
     display: grid;
     grid-template-rows: 200px auto;
+    width: 300px;
     transition: box-shadow $long-animation-time;
     overflow: hidden;
 
