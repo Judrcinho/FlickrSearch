@@ -18,16 +18,19 @@ const SearchBar: React.FC<ISearchBarProps> = ({fetchResults}) => {
     const [userQuery, setUserQuery] = React.useState<string>("golden retriever");  
     
     const getImages = () => dispatch(fetchResults(userQuery));
-    const delayedQuery = useCallback(debounce(getImages, 750), [userQuery]);
+    const delayedRequest = useCallback(debounce(getImages, 750), [userQuery]);
 
     const onInputFieldChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUserQuery(e.target.value);
       };
 
       useEffect(() => {
-        delayedQuery();
-        return delayedQuery.cancel;
-      }, [userQuery, delayedQuery]);
+        if (userQuery !== "") {
+            delayedRequest();
+        }
+
+        return delayedRequest.cancel;
+      }, [userQuery, delayedRequest]);
 
 
     const clearSearch = () => {        
@@ -36,14 +39,10 @@ const SearchBar: React.FC<ISearchBarProps> = ({fetchResults}) => {
         }
     }
 
-    useEffect(() => {
-        getImages()
-    }, [])
-
     return (<div className="searchBar">
         <div className="searchBar__container">
             <div className="searchBar__container__title">
-                <img src={Logo} />
+                <img src={Logo} alt="logo"/>
                 <h1>Search</h1>
             </div>
             <div className="searchBar__container__search">

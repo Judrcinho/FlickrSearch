@@ -16,7 +16,7 @@ export function fetchResults(searchTags: String) {
 
 function getImagesInfo(jsonObject: any): FetchActionType {
     const athorNameRegex = /"([^"]*)"/;
-    const dateTakenRegex = /^(\d{4})\-(\d{1,2})\-(\d{1,2})/;
+    const dateTakenRegex = /^(\d{4})-(\d{1,2})-(\d{1,2})/;
 
     let images: IImageSearchResult[]  = jsonObject.items.map((item: any) => {
         let authorNameParsed = athorNameRegex.exec(item.author);

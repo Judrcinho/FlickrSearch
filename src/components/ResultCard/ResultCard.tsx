@@ -18,8 +18,9 @@ const ResultCard:React.FC<ResultsListProps> = (props) => {
                     className="resultCard__thumbnail"
                     href={props.result.flickrUrl}
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
-                    <img src={props.result.imageUrl}></img>
+                    <img src={props.result.imageUrl} alt="flickr_image" />
                 </a>
                 <div className="resultCard__tags">
                         <div className="resultCard__tags__wrapper">
