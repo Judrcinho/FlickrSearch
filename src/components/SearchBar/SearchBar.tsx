@@ -1,24 +1,38 @@
-import React, { useEffect } from 'react';
+import React, { RefObject, useCallback, useEffect } from 'react';
 import {Dispatch} from 'redux';
 import {useDispatch} from 'react-redux';
-import './SearchBar.scss';
+import debounce from 'lodash.debounce';
 
 import Logo from '../../assets/flickrLogo.png';
+
+import './SearchBar.scss';
 
 type ISearchBarProps = {
     fetchResults:(searchQuery: string) => void;
 }
 
-
 const SearchBar: React.FC<ISearchBarProps> = ({fetchResults}) => {
     const dispatch: Dispatch<any> = useDispatch();
-    const [searchTerms, updateSearchTerms] = React.useState<string>("golden retriever");
+    const inputFieldRef: RefObject<HTMLInputElement> = React.createRef();
 
-    const getImages = () => dispatch(fetchResults(searchTerms));
+    const [userQuery, setUserQuery] = React.useState<string>("golden retriever");  
     
-    const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
-        if (event.key == 'Enter') {
-            getImages();
+    const getImages = () => dispatch(fetchResults(userQuery));
+    const delayedQuery = useCallback(debounce(getImages, 750), [userQuery]);
+
+    const onInputFieldChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setUserQuery(e.target.value);
+      };
+
+      useEffect(() => {
+        delayedQuery();
+        return delayedQuery.cancel;
+      }, [userQuery, delayedQuery]);
+
+
+    const clearSearch = () => {        
+        if (inputFieldRef.current) {
+            inputFieldRef.current.value = "";
         }
     }
 
@@ -37,14 +51,14 @@ const SearchBar: React.FC<ISearchBarProps> = ({fetchResults}) => {
                         type="text"
                         placeholder="Search for..."
                         id="searchField" 
-                        onChange={(event) => updateSearchTerms(event.target.value)}
-                        onKeyPress={(event) => handleKeyPress(event)}
+                        onChange={onInputFieldChange}
+                        ref={inputFieldRef}
                     />
                     <div 
                         className="searchBar__container__search_button"
-                        onClick={getImages}
+                        onClick={clearSearch}
                     >
-                        Search
+                        Clear search
                     </div>
             </div>
         </div>
