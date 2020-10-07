@@ -1,5 +1,7 @@
+@import '../../common/variables.scss';
+
 body {
-  font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+  font-family: $main-font;
   margin: 0;
 }
 

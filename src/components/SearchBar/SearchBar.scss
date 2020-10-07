@@ -1,3 +1,5 @@
+@import '../../common/variables.scss';
+
 .searchBar {
     height: fit-content;
     align-items: center;
@@ -20,7 +22,7 @@
 
         &__title {
             h1 {
-                color: white;
+                color: $text-color;
                 margin-top: auto;
             }
 
@@ -33,17 +35,17 @@
             margin-bottom: 10px;
  
             input {
-                font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+                font-family: $main-font;
                 width: 200px;
                 height: 30px;
-                background-color: #dcdcdc;
-                border: 1px solid #cccccc;
+                background-color: $input-field-color-normal;
+                border: 1px solid $input-field-boarder-color;
                 border-radius: 3px;
                 transition: 0.5s;     
                 font-size: 16px;           
 
                 &:focus {
-                    background-color: white;
+                    background-color: $input-field-color-active;
                     outline: none;
                     width: 250px;
                 }
@@ -53,18 +55,18 @@
                 margin-left: 5px;
                 height: 25px;
                 border-radius: 3px;
-                color: white;
-                background-color: #128fdc;
+                color: $button-text-color;
+                background-color: $button-color-normal;
                 align-items: center;
                 display: flex;
                 padding: 5px;
-                transition: 0.5s;
+                transition: $long-animation-time;
                 width: 75px;
                 font-size: 18px;
                 justify-content: center;
 
                 &:hover {
-                    background-color: #5aafe4;
+                    background-color: $button-color-hovered;
                     cursor: pointer;
                 }
 
