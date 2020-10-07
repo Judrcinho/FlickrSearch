@@ -39,12 +39,13 @@
                 background-color: #dcdcdc;
                 border: 1px solid #cccccc;
                 border-radius: 3px;
-                transition: 1s;     
+                transition: 0.5s;     
                 font-size: 16px;           
 
                 &:focus {
                     background-color: white;
                     outline: none;
+                    width: 250px;
                 }
             }
 
@@ -57,7 +58,7 @@
                 align-items: center;
                 display: flex;
                 padding: 5px;
-                transition: 1s;
+                transition: 0.5s;
                 width: 75px;
                 font-size: 18px;
                 justify-content: center;
@@ -65,6 +66,10 @@
                 &:hover {
                     background-color: #5aafe4;
                     cursor: pointer;
+                }
+
+                &:active {
+                    transform: scale(0.85);
                 }
             }
         }
