@@ -16,11 +16,11 @@ const ResultCard:React.FC<ResultsListProps> = (props) => {
     return <div className="resultCard">
                 <a 
                     className="resultCard__thumbnail"
-                    href={props.result.fullImageUrl}
+                    href={props.result.flickrUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <img src={props.result.imageUrl} alt="unsplash_image" />
+                    <img src={props.result.imageUrl} alt="flickr_image" />
                 </a>
                 <div className="resultCard__tags">
                         <div className="resultCard__tags__wrapper">
@@ -40,6 +40,7 @@ const ResultCard:React.FC<ResultsListProps> = (props) => {
                 <div className="resultCard__background" />
                 <div className="resultCard__footer">
                     <div className="resultCard__footer_date">{props.result.date}</div>
+                    <div className="resultCard__footer_author">by {props.result.author}</div>
                 </div>
             </div>
 }

@@ -1,5 +1,5 @@
 {
-  "name": "unsplash_search_tool",
+  "name": "flickr_search_tool",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,7 +12,6 @@
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "@types/react-redux": "^7.1.9",
-    "axios": "^0.20.0",
     "fetch-jsonp": "^1.1.3",
     "lodash.debounce": "^4.0.8",
     "node-sass": "^4.14.1",
