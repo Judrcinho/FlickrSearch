@@ -1,5 +1,5 @@
 export interface IImageSearchResult {
-    flickrUrl: string,
+    fullImageUrl: string,
     imageUrl: string,
     date: string,
     author: string,

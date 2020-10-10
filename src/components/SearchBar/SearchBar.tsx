@@ -15,7 +15,7 @@ const SearchBar: React.FC<ISearchBarProps> = ({fetchResults}) => {
     const dispatch: Dispatch<any> = useDispatch();
     const inputFieldRef: RefObject<HTMLInputElement> = React.createRef();
 
-    const [userQuery, setUserQuery] = React.useState<string>("golden retriever");  
+    const [userQuery, setUserQuery] = React.useState<string>("racoon");  
     
     const getImages = () => dispatch(fetchResults(userQuery));
     const delayedRequest = useCallback(debounce(getImages, 750), [userQuery]);
@@ -42,7 +42,7 @@ const SearchBar: React.FC<ISearchBarProps> = ({fetchResults}) => {
     return (<div className="searchBar">
         <div className="searchBar__container">
             <div className="searchBar__container__title">
-                <img src={Logo} alt="logo"/>
+                <h2>Unsplash</h2>
                 <h1>Search</h1>
             </div>
             <div className="searchBar__container__search">

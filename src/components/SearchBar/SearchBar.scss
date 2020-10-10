@@ -26,9 +26,11 @@
                 margin-top: auto;
             }
 
-            img {
-                height: 45px; 
-            }                                   
+            h2 {
+                color: $text-color;
+                font-size: 40px;
+                margin: 0px;
+            }                                  
         }
 
         &__search {           
